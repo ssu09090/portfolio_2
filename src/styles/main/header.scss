@@ -1,3 +1,14 @@
+.neon-title {
+  color: #bfff00;
+  text-shadow:
+    0 0 5px #80ff00,
+    0 0 5px #80ff00,
+    0 0 5px #80ff00;
+}
+.header-ment span {
+  display: inline-block; // 각 글자가 개별 애니메이션 대상
+  white-space: pre; // 띄어쓰기 보존
+}
 #header {
   height: 100vh;
   margin: 0 auto;
