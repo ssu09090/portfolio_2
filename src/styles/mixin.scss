@@ -1,0 +1,54 @@
+//정렬
+@mixin layout($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+//반응형 믹스인
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+//기타 컴포넌트
+@mixin txt-shadow($color:var(--color-primary-line)){
+  text-shadow: 0 0 5px $color;
+}
+@mixin box-shadow($color:var(--color-secondary-linee)){
+  box-shadow: 0 0 5px $color;
+}
+
+//버튼 컴포넌트
+
+@mixin menu-btn {
+  @include layout();
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 2rem;
+  color: inherit;
+}
+
+@mixin btn($bg: var(--color-btn)) {
+  background-color: $bg;
+  padding: 0.5rem 1rem;
+  font-size: $font-small;
+  outline: none;
+  border: none;
+  border-radius: 15px;
+  color: var(--color-maintxt);
+  cursor: pointer;
+  transition: all 0.3s;
+  &:hover {
+    background-color: var(--color-btn-hover);
+  }
+}

@@ -1,0 +1,41 @@
+//FONT
+//Esamanru
+@import url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicLight.woff');
+
+//Paperlogy
+@import url('https://cdn.jsdelivr.net/gh/fonts-archive/Paperlogy/Paperlogy.css');
+
+//Suit
+@import url("https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/variable/woff2/SUIT-Variable.css");
+
+
+//VARIABLE
+//COLOR
+:root{
+  --color-primary:#bfff00;
+  --color-primary-line:#80ff00;
+  --color-secondary:#00eaff;
+  --color-secondary-line:#0099cc;
+  --color-teriary:#ff4dbe;
+  --color-teriary-line:#cc0099;
+  --color-point:#ffee80;
+  --color-point-line:#ffcc00;
+  --color-btn:#7a33ff;
+  --color-btn-hover:#5600cc;
+  --color-btn-line:#330066;
+  --color-error:#ff3131;
+
+  --color-bg:#222222;
+  --color-subbg:#f5f5f5;
+
+  --color-maintxt: #eeeeee;
+  --color-subtxt: #999999;
+  --color-blacktxt: #333333;
+}
+
+//Font-Size
+$font-h1:3rem;
+$font-large:2rem;
+$font-medium: 1.5rem;
+$font-small: 1rem;
+$font-small-small: 0.75rem;

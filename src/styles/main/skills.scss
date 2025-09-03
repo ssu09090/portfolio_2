@@ -1,0 +1,98 @@
+.skills {
+  height: 100%;
+  margin: 5rem 0;
+  h1 {
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 2.5rem;
+    margin-bottom: 5rem;
+    span {
+      color: var(--color-primary);
+      @include txt-shadow();
+    }
+  }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); // 모바일 2열
+    justify-items: center;
+    gap: 1.5rem 0rem;
+    margin: 0 auto;
+    .skills-icon {
+      @include box-shadow(var(--color-secondary-line));
+      figure {
+        @include layout(column);
+        width: 150px;
+        height: 200px;
+        gap: 0.5rem;
+        padding: 1rem 0;
+        text-align: center;
+        img {
+          width: 100px;
+        }
+        figcaption {
+          font-size: 1.1rem;
+          font-weight: 700;
+          color: var(--main-text);
+        }
+      }
+    }
+  }
+}
+
+@include tablet {
+  .skills {
+    h1 {
+      font-size: 3.5rem;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); // 모바일 2열
+      justify-items: center;
+      gap: 3rem 0rem;
+      .skills-icon {
+        figure {
+          width: 200px;
+          height: 200px;
+          gap: 1rem;
+          padding: 1rem 0;
+          @include box-shadow(var(--color-secondary-line));
+          img {
+            width: 100px;
+          }
+          figcaption {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--main-text);
+          }
+        }
+      }
+    }
+  }
+}
+
+//데스크탑 버전
+@include desktop {
+  .skills {
+    min-height: 60vh;
+    h1 {
+      font-size: 4.5rem;
+    }
+    .skills-grid {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 2rem;
+      position: relative;
+      overflow: hidden;
+      padding: 1rem 0;
+    }
+    .skills-track {
+      display: flex;
+      gap: 24px;
+      flex-wrap: nowrap;
+      will-change: transform;
+    }
+    .skills .skills-track > * {
+      flex: 0 0 auto;
+    }
+  }
+}

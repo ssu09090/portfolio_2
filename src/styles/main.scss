@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  display: block;
+  color: inherit;
+}
+h1,
+h2,
+h3 {
+  font-family: "esamanru";
+}
+li {
+  list-style: none;
+}
+html {
+  font-size: 16px;
+}
+body {
+  width: 100vw;
+  height: auto;
+  user-select: none;
+  font-family: "Paperlogy";
+  background-color: var(--color-bg);
+  word-break: keep-all;
+  color: var(--color-maintxt);
+  position: relative;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+}

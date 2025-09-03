@@ -1,0 +1,67 @@
+#header {
+  height: 100vh;
+  width: 85%;
+  margin: 0 auto;
+  padding: 5rem 0rem;
+  @include layout(column, center, flex-start);
+  gap: 5rem;
+  .header-title {
+    @include layout(column, center, flex-start);
+    h2 {
+      font-weight: 900;
+      font-size: 2rem;
+      color: var(--color-teriary);
+      -webkit-text-stroke: 1px var(--color-teriary-line);
+    }
+    h1 {
+      font-weight: 700;
+      font-size: 3rem;
+      color: var(--color-primary);
+      -webkit-text-stroke: 1px var(--color-primary-line);
+      @include txt-shadow();
+    }
+  }
+  .header-ment {
+    @include layout(column, center, flex-start);
+    line-height: 1.5;
+  }
+}
+
+@include tablet {
+  #header {
+    height: 100vh;
+    width: 70%;
+    gap: 7rem;
+    .header-title {
+      h2 {
+        font-size: 3.5rem;
+      }
+      h1 {
+        font-size: 4.5rem;
+      }
+    }
+    .header-ment {
+      line-height: 1.5;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@include desktop {
+  #header {
+    width: 55%;
+    gap: 10rem;
+    .header-title {
+      h2 {
+        font-size: 5rem;
+      }
+      h1 {
+        font-size: 6rem;
+      }
+    }
+    .header-ment {
+      line-height: 1.7;
+      font-size: 1.7rem;
+    }
+  }
+}
