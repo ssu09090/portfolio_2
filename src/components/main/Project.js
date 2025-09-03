@@ -1,14 +1,35 @@
 import { useNavigate } from "react-router-dom";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 
 const Project = () => {
   const navigate = useNavigate();
+  const titleRef = useRef(null);
+
+  useEffect(() => {
+    //네온
+    if (titleRef.current) {
+      gsap.to(titleRef.current, {
+        duration: 1,
+        repeat: -1,
+        yoyo: true,
+        textShadow: `
+          0 0 5px #80ff00,
+          0 0 5px #80ff00,
+          0 0 5px #80ff00,
+          0 0 5px #80ff00
+        `,
+        ease: "power1.inOut",
+      });
+    }
+  }, []);
 
   return (
     <div>
       <div id="P"></div>
       <section className="projects">
         <div className="project-info">
-          <h1>MY PROJECTS</h1>
+          <h1  ref={titleRef} className="neon-title">MY PROJECTS</h1>
           <p className="pj-ment">
             실무 감각을 키우기 위해 직접 설계하고 제작한 웹 프로젝트들 입니다.
             <br />

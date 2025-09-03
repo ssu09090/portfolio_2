@@ -1,12 +1,33 @@
-
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 
 const Skills = () => {
+  const titleRef = useRef(null);
+
+  useEffect(() => {
+    //네온
+    if (titleRef.current) {
+      gsap.to(titleRef.current, {
+        duration: 1,
+        repeat: -1,
+        yoyo: true,
+        textShadow: `
+          0 0 5px #80ff00,
+          0 0 5px #80ff00,
+          0 0 5px #80ff00,
+          0 0 5px #80ff00
+        `,
+        ease: "power1.inOut",
+      });
+    }
+  }, []);
+
   return (
     <div>
       {/* SKILLS */}
       <div id="S"></div>
       <section className="skills">
-        <h1>
+        <h1 ref={titleRef} className="neon-title">
           SKILLS<span> & TOOLS</span>
         </h1>
         <ul className="skills-grid">

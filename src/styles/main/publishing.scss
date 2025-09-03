@@ -9,12 +9,12 @@
     margin: 1rem 0;
     h1 {
       font-size: 2.5rem;
+      @include txt-shadow();
+      @include txt-stroke();
     }
     h1:last-child {
       font-size: 2.5rem;
       color: var(--color-primary);
-      @include txt-shadow();
-      @include txt-stroke();
     }
   }
   .publishing-grid {

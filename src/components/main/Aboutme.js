@@ -4,13 +4,35 @@ import { FaFeatherAlt } from "react-icons/fa";
 import { FaHandPointUp } from "react-icons/fa";
 import { FaWaveSquare } from "react-icons/fa";
 import { FaStairs } from "react-icons/fa6";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 
 const Aboutme = () => {
+  const titleRef = useRef(null);
+
+  useEffect(() => {
+    //네온
+    if (titleRef.current) {
+      gsap.to(titleRef.current, {
+        duration: 1,
+        repeat: -1,
+        yoyo: true,
+        textShadow: `
+          0 0 5px #80ff00,
+          0 0 5px #80ff00,
+          0 0 5px #80ff00,
+          0 0 5px #80ff00
+        `,
+        ease: "power1.inOut",
+      });
+    }
+  }, []);
+
   return (
     <div>
       <div id="A"></div>
       <section className="about-me">
-        <h1>ABOUT ME</h1>
+        <h1 ref={titleRef} className="neon-title">ABOUT ME</h1>
         <div className="profile-wrap">
           <div className="profile">
             <img

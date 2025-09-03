@@ -1,13 +1,34 @@
 import { useNavigate } from "react-router-dom";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 
 const Publishing = () => {
   const navigate = useNavigate();
+  const titleRef = useRef(null);
+
+  useEffect(() => {
+    //네온
+    if (titleRef.current) {
+      gsap.to(titleRef.current, {
+        duration: 1,
+        repeat: -1,
+        yoyo: true,
+        textShadow: `
+          0 0 5px #80ff00,
+          0 0 5px #80ff00,
+          0 0 5px #80ff00,
+          0 0 5px #80ff00
+        `,
+        ease: "power1.inOut",
+      });
+    }
+  }, []);
 
   return (
     <div>
       {/* CLONE CODING */}
       <section className="clone">
-        <h1>CLONE CODING</h1>
+        <h1 ref={titleRef} className="neon-title">CLONE CODING</h1>
         <p className="pj-ment">
           실무에서 널리 활용되는 사용자 인터페이스를 직접 구현함으로써,
           <br />
@@ -122,8 +143,8 @@ const Publishing = () => {
       {/* PUBLISHING */}
       <section className="publishing">
         <div className="title-wrap">
-          <h1>PRACTICAL</h1>
-          <h1>PUBLISHING</h1>
+          <h1 ref={titleRef} >PRACTICAL</h1>
+          <h1 ref={titleRef} className="neon-title">PUBLISHING</h1>
         </div>
         <p className="warning">
           크롬 접속시 '위험한 사이트' 경고가 있어도 <br />
@@ -153,7 +174,8 @@ const Publishing = () => {
               <p className="explain">
                 데이터베이스 연동 <br />
                 등록된 이메일 기반으로 로그인 <br />
-                게시글 및 댓글 작성, 수정, 삭제 기능 구현<br/>
+                게시글 및 댓글 작성, 수정, 삭제 기능 구현
+                <br />
                 로그인 메일 : 1004@sample.com
               </p>
             </div>
