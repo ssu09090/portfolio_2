@@ -19,12 +19,16 @@
 }
 
 //기타 컴포넌트
-@mixin txt-shadow($color:var(--color-primary-line)){
+@mixin txt-shadow($color: var(--color-primary-line)) {
   text-shadow: 0 0 5px $color;
 }
-@mixin box-shadow($color:var(--color-secondary-linee)){
-  box-shadow: 0 0 5px $color;
+@mixin box-shadow($color: var(--color-secondary-line)) {
+  box-shadow: 0 0 10px $color;
 }
+@mixin txt-stroke($color: var(--color-primary-line)) {
+  -webkit-text-stroke: 1px $color;
+}
+
 
 //버튼 컴포넌트
 
@@ -46,6 +50,9 @@
   border: none;
   border-radius: 15px;
   color: var(--color-maintxt);
+  font-family: "SUIT";
+  text-align: center;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s;
   &:hover {

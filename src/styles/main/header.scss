@@ -1,9 +1,8 @@
 #header {
   height: 100vh;
-  width: 85%;
   margin: 0 auto;
   padding: 5rem 0rem;
-  @include layout(column, center, flex-start);
+  @include layout(column, center, center);
   gap: 5rem;
   .header-title {
     @include layout(column, center, flex-start);
@@ -11,18 +10,19 @@
       font-weight: 900;
       font-size: 2rem;
       color: var(--color-teriary);
-      -webkit-text-stroke: 1px var(--color-teriary-line);
+      @include txt-stroke(var(--color-teriary-line));
     }
     h1 {
       font-weight: 700;
       font-size: 3rem;
       color: var(--color-primary);
-      -webkit-text-stroke: 1px var(--color-primary-line);
+      @include txt-stroke();
       @include txt-shadow();
     }
   }
   .header-ment {
     @include layout(column, center, flex-start);
+padding: 1rem;
     line-height: 1.5;
   }
 }

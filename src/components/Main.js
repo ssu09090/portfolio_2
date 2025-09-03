@@ -4,6 +4,8 @@ import Aboutme from "./main/Aboutme";
 
 import Footer from "./main/Footer";
 import Skills from "./main/Skills";
+import Project from "./main/Project";
+import Publishing from "./main/Publishing";
 
 const Main = () => {
   return (
@@ -15,6 +17,8 @@ const Main = () => {
       <main>
         <Aboutme />
         <Skills />
+        <Project/>
+        <Publishing/>
       </main>
       <footer>
         <Footer />

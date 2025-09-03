@@ -1,3 +1,4 @@
+
 .about-me {
   @include layout(column);
   margin: 0 auto;
@@ -5,8 +6,8 @@
   h1 {
     font-size: 2.5rem;
     color: var(--color-primary);
-    -webkit-text-stroke: 1px var(--color-primary-line);
-    text-shadow: 0 0 5px var(--color-primary-line);
+    @include txt-stroke();
+    @include txt-shadow();
   }
   .profile {
     @include layout(column);
@@ -62,7 +63,6 @@
 //테블릿 버전
 @include tablet {
   .about-me {
-    height: 100%;
     margin: 2rem 0;
     @include layout(column, flex-start);
     h1 {
@@ -116,7 +116,6 @@
 @include desktop {
   .about-me {
     width: 100%;
-    height: 100%;
     @include layout(column, center);
     gap: 8rem;
     h1 {
@@ -125,6 +124,7 @@
     .profile-wrap {
       @include layout(row, space-around);
       width: 100%;
+      gap: 5rem;
       .profile {
         @include layout(column);
         gap: 2rem;

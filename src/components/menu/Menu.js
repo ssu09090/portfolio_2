@@ -6,12 +6,17 @@ import TabletMenu from "./Tabletmenu";
 
 import { IoMenuSharp } from "react-icons/io5";
 
+
 const Menu = () => {
   const navigate = useNavigate();
 
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 530);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   // 모바일 화면 크기 감지
   useEffect(() => {
@@ -45,6 +50,7 @@ const Menu = () => {
         className="home-btn"
         onClick={() => {
           navigate("/");
+          window.scrollTo({ top: 0})
         }}
       >
         <p> HOME</p>

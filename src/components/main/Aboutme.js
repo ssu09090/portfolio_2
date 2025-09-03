@@ -8,6 +8,7 @@ import { FaStairs } from "react-icons/fa6";
 const Aboutme = () => {
   return (
     <div>
+      <div id="A"></div>
       <section className="about-me">
         <h1>ABOUT ME</h1>
         <div className="profile-wrap">
