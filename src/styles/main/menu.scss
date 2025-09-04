@@ -1,5 +1,6 @@
 #menu-wrap {
   font-family: "SUIT";
+  font-weight: 600;
   @include layout(row, space-between, center);
   position: fixed;
   height: 70px;
@@ -9,7 +10,6 @@
   z-index: 10;
   min-width: 330px;
   width: 100%;
-
   .home-btn {
     font-weight: 900;
     font-size: 1.5rem;
@@ -17,6 +17,7 @@
     transition: all 0.3s;
     &:hover {
       color: var(--color-secondary);
+      scale: 1.1;
     }
   }
   .open-menu {
@@ -31,7 +32,7 @@
           cursor: pointer;
           transition: all 0.3s;
           &:hover {
-            color: var(--color-teriary);
+            text-shadow: 0 0 10px var(--color-teriary-line);
           }
         }
       }
@@ -48,6 +49,9 @@
   background: rgba(0, 0, 0, 0.6);
   z-index: 1000;
   .mobile-menu {
+    font-family: "SUIT";
+    font-weight: 600;
+    font-size: 1.2rem;
     z-index: 100;
     position: absolute;
     top: 0;
@@ -66,7 +70,7 @@
         cursor: pointer;
         transition: all 0.3s;
         &:hover {
-          color: var(--color-teriary);
+          color: var(--color-teriary-line);
           scale: 1.1;
         }
       }
@@ -92,6 +96,15 @@
 #menu-wrap.scrolled .tablet-menu ul li,
 #menu-wrap.scrolled .open-menu {
   color: #222222;
+  &:hover {
+    text-shadow: none;
+    color: var(--color-teriary-line);
+  }
+}
+#menu-wrap.scrolled .home-btn {
+  &:hover {
+    color: var(--color-secondary-line);
+  }
 }
 @include tablet {
   #menu-wrap {

@@ -1,5 +1,5 @@
 .skills {
-  margin-bottom:10rem;
+  margin-bottom: 10rem;
   height: 100%;
   margin: 5rem auto;
   h1 {
@@ -49,7 +49,7 @@
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr); // 모바일 2열
-      justify-items: center;
+
       gap: 3rem 3rem;
       .skills-icon {
         figure {
@@ -79,22 +79,21 @@
     h1 {
       font-size: 4.5rem;
     }
-    .skills-grid {
-      display: flex;
-      flex-wrap: nowrap;
-      gap: 2rem;
-      position: relative;
-      overflow: hidden;
-      padding: 1rem 0;
+    .skills-slider {
+      overflow: hidden; 
+      width: 100%;
     }
+
     .skills-track {
       display: flex;
-      gap: 24px;
       flex-wrap: nowrap;
+      gap: 2rem; 
       will-change: transform;
+      margin: 2rem 0;
     }
-    .skills .skills-track > * {
-      flex: 0 0 auto;
+
+    .skills-icon {
+      flex: 0 0 auto; 
     }
   }
 }

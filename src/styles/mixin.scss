@@ -45,7 +45,7 @@
 @mixin btn($bg: var(--color-btn)) {
   background-color: $bg;
   padding: 0.5rem 1rem;
-  font-size: $font-small;
+  font-size: 1rem;
   outline: none;
   border: none;
   border-radius: 15px;

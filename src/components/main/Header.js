@@ -36,7 +36,7 @@ const Header = () => {
           ease: "power2.out",
           repeat: -1,
           repeatDelay: 1.5,
-          yoyo: true,
+          toggleActions: "play none none reverse",
         }
       );
     }

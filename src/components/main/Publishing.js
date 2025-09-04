@@ -4,31 +4,61 @@ import gsap from "gsap";
 
 const Publishing = () => {
   const navigate = useNavigate();
-  const titleRef = useRef(null);
+  const cloneTitleRef = useRef(null);
+  const publishingTitleRef = useRef(null);
+  const practicalTitleRef = useRef(null);
+  const itemsRef = useRef([]);
 
   useEffect(() => {
-    //네온
-    if (titleRef.current) {
-      gsap.to(titleRef.current, {
-        duration: 1,
-        repeat: -1,
-        yoyo: true,
-        textShadow: `
-          0 0 5px #80ff00,
+    const neonAnim = (el) => {
+      if (el) {
+        gsap.to(el, {
+          duration: 1,
+          repeat: -1,
+          yoyo: true,
+          textShadow: `
           0 0 5px #80ff00,
           0 0 5px #80ff00,
           0 0 5px #80ff00
         `,
-        ease: "power1.inOut",
-      });
-    }
+          ease: "power1.inOut",
+        });
+      }
+    };
+
+    neonAnim(cloneTitleRef.current);
+    neonAnim(publishingTitleRef.current);
+    neonAnim(practicalTitleRef.current);
+
+    // 각 project-item 스크롤 애니메이션
+    itemsRef.current.forEach((item) => {
+      if (item) {
+        gsap.fromTo(
+          item,
+          { y: 50, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: item,
+              start: "top 80%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
+      }
+    });
   }, []);
 
   return (
     <div>
       {/* CLONE CODING */}
       <section className="clone">
-        <h1 ref={titleRef} className="neon-title">CLONE CODING</h1>
+        <h1 ref={cloneTitleRef} className="neon-title">
+          CLONE CODING
+        </h1>
         <p className="pj-ment">
           실무에서 널리 활용되는 사용자 인터페이스를 직접 구현함으로써,
           <br />
@@ -44,7 +74,7 @@ const Publishing = () => {
         </p>
 
         <div className="projects-list">
-          <div className="project-item">
+          <div className="project-item"  ref={(el) => (itemsRef.current[0] = el)}>
             <img
               src={`${process.env.PUBLIC_URL}/images/project/tesla_thumnail.png`}
               alt="테슬라"
@@ -75,7 +105,7 @@ const Publishing = () => {
               </div>
             </div>
           </div>
-          <div class="project-item">
+          <div class="project-item" ref={(el) => (itemsRef.current[1] = el)}>
             <img
               src={`${process.env.PUBLIC_URL}/images/project/airbnb_thumnail.png`}
               alt="에어비앤비"
@@ -106,7 +136,7 @@ const Publishing = () => {
               </div>
             </div>
           </div>
-          <div class="project-item">
+          <div class="project-item" ref={(el) => (itemsRef.current[2] = el)}>
             <img
               src={`${process.env.PUBLIC_URL}/images/project/netflix_thumnail.png`}
               alt="넷플릭스"
@@ -143,8 +173,10 @@ const Publishing = () => {
       {/* PUBLISHING */}
       <section className="publishing">
         <div className="title-wrap">
-          <h1 ref={titleRef} >PRACTICAL</h1>
-          <h1 ref={titleRef} className="neon-title">PUBLISHING</h1>
+          <h1 ref={practicalTitleRef}>PRACTICAL</h1>
+          <h1 ref={publishingTitleRef} className="neon-title">
+            PUBLISHING
+          </h1>
         </div>
         <p className="warning">
           크롬 접속시 '위험한 사이트' 경고가 있어도 <br />
@@ -152,7 +184,7 @@ const Publishing = () => {
         </p>
 
         <div className="publishing-grid">
-          <div className="project-item">
+          <div className="project-item" ref={(el) => (itemsRef.current[3] = el)}>
             <a
               href="https://ssu09090.github.io/postboard/"
               target="_blank"
@@ -180,7 +212,7 @@ const Publishing = () => {
               </p>
             </div>
           </div>
-          <div class="project-item">
+          <div class="project-item" ref={(el) => (itemsRef.current[4] = el)}>
             <a
               href="https://ssu09090.github.io/myday/"
               target="_blank"
@@ -208,7 +240,7 @@ const Publishing = () => {
               </p>
             </div>
           </div>
-          <div class="project-item">
+          <div class="project-item" ref={(el) => (itemsRef.current[5] = el)}>
             <a
               href="https://ssu09090.github.io/seasons"
               target="_blank"
@@ -232,7 +264,7 @@ const Publishing = () => {
               </p>
             </div>
           </div>
-          <div class="project-item">
+          <div class="project-item" ref={(el) => (itemsRef.current[6] = el)}>
             <a
               href="https://ssu09090.github.io/bookstore"
               target="_blank"

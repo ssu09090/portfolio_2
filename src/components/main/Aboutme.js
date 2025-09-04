@@ -4,11 +4,20 @@ import { FaFeatherAlt } from "react-icons/fa";
 import { FaHandPointUp } from "react-icons/fa";
 import { FaWaveSquare } from "react-icons/fa";
 import { FaStairs } from "react-icons/fa6";
+
 import { useEffect, useRef } from "react";
+
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const Aboutme = () => {
   const titleRef = useRef(null);
+  const profileRef = useRef(null);
+  const resumeRef = useRef(null);
+  const keywordTitleRef = useRef(null);
+  const keywordsRef = useRef(null);
+  const introRef = useRef(null);
 
   useEffect(() => {
     //네온
@@ -26,15 +35,102 @@ const Aboutme = () => {
         ease: "power1.inOut",
       });
     }
+
+    // Profile 올라오기
+    gsap.fromTo(
+      profileRef.current,
+      { y: 50, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: profileRef.current,
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+
+    // Resume 페이드 인
+    gsap.fromTo(
+      resumeRef.current,
+      { opacity: 0 },
+      {
+        opacity: 1,
+        duration: 1.2,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: resumeRef.current,
+          start: "top 65%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+
+    // Keywords Title 반짝임
+    if (keywordTitleRef.current) {
+      gsap.to(keywordTitleRef.current, {
+        duration: 1,
+        repeat: -1,
+        yoyo: true,
+        textShadow: `
+          0 0 5px #cc0099,
+          0 0 10px #cc0099,
+          0 0 20px #cc0099
+        `,
+        ease: "power1.inOut",
+      });
+    }
+
+    // Keywords 하나씩 올라오기
+    if (keywordsRef.current) {
+      const items = keywordsRef.current.querySelectorAll("p");
+      gsap.fromTo(
+        items,
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.6,
+          stagger: 0.2,
+          ease: "back.out(1.7)",
+          scrollTrigger: {
+            trigger: keywordsRef.current,
+            start: "top 70%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    }
+
+    // Intro 멘트 - 위로 올라오기 + 페이드인
+    gsap.fromTo(
+      introRef.current,
+      { opacity: 0 },
+      {
+        opacity: 1,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: introRef.current,
+          start: "top 60%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
   }, []);
 
   return (
     <div>
       <div id="A"></div>
       <section className="about-me">
-        <h1 ref={titleRef} className="neon-title">ABOUT ME</h1>
+        <h1 ref={titleRef} className="neon-title">
+          ABOUT ME
+        </h1>
         <div className="profile-wrap">
-          <div className="profile">
+          <div className="profile" ref={profileRef}>
             <img
               src={`${process.env.PUBLIC_URL}/images/profile.png`}
               alt="프로필 이모지 사진"
@@ -44,7 +140,7 @@ const Aboutme = () => {
               문제 해결형 개발자 <strong>정수진</strong> 입니다
             </p>
           </div>
-          <div className="resume">
+          <div className="resume" ref={resumeRef}>
             <div className="contact">
               <h3>Contact</h3>
               <p>
@@ -112,9 +208,9 @@ const Aboutme = () => {
       {/* KEYWORDS */}
       <section className="keywords">
         <div>
-          <h2>My Keywords</h2>
+          <h2 ref={keywordTitleRef}>My Keywords</h2>
         </div>
-        <div className="keywords-wrap">
+        <div className="keywords-wrap" ref={keywordsRef}>
           <p>
             섬세함 <FaFeatherAlt />
           </p>
@@ -128,7 +224,7 @@ const Aboutme = () => {
             꾸준함 <FaStairs />
           </p>
         </div>
-        <div className="intro-ment">
+        <div className="intro-ment" ref={introRef}>
           <p>
             HTML, CSS, JavaScript 기반 웹 퍼블리싱 경험과 React 프로젝트 경험을
             통해 <br />
