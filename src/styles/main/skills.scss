@@ -13,6 +13,10 @@
       color: var(--color-primary);
     }
   }
+  .neon-title {
+    color: var(--color-maintxt);
+    @include txt-shadow();
+  }
   .skills-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr); // 모바일 2열
@@ -80,20 +84,20 @@
       font-size: 4.5rem;
     }
     .skills-slider {
-      overflow: hidden; 
+      overflow: hidden;
       width: 100%;
     }
 
     .skills-track {
       display: flex;
       flex-wrap: nowrap;
-      gap: 2rem; 
+      gap: 2rem;
       will-change: transform;
       margin: 2rem 0;
     }
 
     .skills-icon {
-      flex: 0 0 auto; 
+      flex: 0 0 auto;
     }
   }
 }

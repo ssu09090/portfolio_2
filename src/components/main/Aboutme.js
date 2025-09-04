@@ -11,7 +11,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-const Aboutme = () => {
+const AboutMe = () => {
   const titleRef = useRef(null);
   const profileRef = useRef(null);
   const resumeRef = useRef(null);
@@ -238,4 +238,4 @@ const Aboutme = () => {
   );
 };
 
-export default Aboutme;
+export default AboutMe;

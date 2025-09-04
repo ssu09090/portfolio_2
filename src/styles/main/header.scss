@@ -1,9 +1,6 @@
 .neon-title {
   color: #bfff00;
-  text-shadow:
-    0 0 5px #80ff00,
-    0 0 5px #80ff00,
-    0 0 5px #80ff00;
+  text-shadow: 0 0 5px #80ff00, 0 0 5px #80ff00, 0 0 5px #80ff00;
 }
 .header-ment span {
   display: inline-block; // 각 글자가 개별 애니메이션 대상
@@ -33,8 +30,21 @@
   }
   .header-ment {
     @include layout(column, center, flex-start);
-padding: 1rem;
+    padding: 1rem;
     line-height: 1.5;
+    .mobile-text {
+      display: block;
+      @media (min-width: 1024px) {
+        display: none;
+      }
+    }
+
+    .desktop-text {
+      display: none;
+      @media (min-width: 1024px) {
+        display: block;
+      }
+    }
   }
 }
 

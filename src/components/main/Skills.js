@@ -92,7 +92,7 @@ const Skills = () => {
       <div id="S"></div>
       <section className="skills">
         <h1>
-          <span ref={skillsRef} className="neon-title">
+          <span ref={skillsRef}>
             SKILLS{" "}
           </span>
           <span ref={toolsRef} className="neon-title">

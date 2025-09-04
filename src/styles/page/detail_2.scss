@@ -1,0 +1,239 @@
+//첫번째 페이지 모바일
+.screen-cover {
+  position: relative;
+  @include layout(column);
+  gap: 5rem;
+  @include desktop {
+    @include layout();
+    gap: 5rem;
+  }
+  .screen-summary {
+    @include box-shadow(var(--color-secondary-line));
+    @include layout(column);
+    gap: 2rem;
+    ul {
+      padding: 2rem;
+      @include layout(column);
+      gap: 1rem;
+      align-items: flex-start;
+      text-align: left;
+      li {
+        font-size: 0.8rem;
+        line-height: 1.5;
+        @include tablet {
+          font-size: 1.2rem;
+        }
+        @include desktop {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+  .screen-container {
+    height: 50vh;
+    perspective: 1000px;
+    justify-content: center;
+    display: flex;
+    align-items: flex-start;
+    .screen-view {
+      transform-style: preserve-3d;
+      position: relative;
+      transition: all 1s;
+      div {
+        cursor: pointer;
+        border-radius: 17%;
+        @include layout();
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+        backface-visibility: hidden;
+        .q {
+          width: 95%;
+        }
+      }
+      .screen-mockup1 {
+        z-index: 1;
+        img {
+          height: 50vh;
+        }
+        img:nth-child(2) {
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translate(-50%);
+          z-index: -1;
+          border-radius: 50px;
+        }
+      }
+      .screen-mockup2 {
+        transform: translateX(-50%) rotateY(180deg);
+        img {
+          height: 50vh;
+        }
+        img:nth-child(2) {
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translate(-50%);
+          z-index: -1;
+          border-radius: 50px;
+        }
+      }
+    }
+    .isflip {
+      transform: rotateY(180deg);
+    }
+
+    // 테블릿 부터
+    @include tablet {
+      .screen-view {
+        @include layout();
+        align-items: flex-start;
+        transform-style: none;
+        div {
+          cursor: auto;
+          backface-visibility: none;
+          left: 0;
+          transform: none;
+        }
+        .screen-mockup1 {
+          position: relative;
+          img {
+            height: 50vh;
+          }
+          img:nth-child(2) {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%);
+            z-index: -1;
+          }
+        }
+        .screen-mockup2 {
+          transform: none;
+          border-radius: 15%;
+          position: relative;
+          img {
+            height: 50vh;
+          }
+          img:nth-child(2) {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%);
+            z-index: -1;
+          }
+        }
+      }
+      .isflip {
+        transform: none;
+      }
+    }
+  }
+  .touch {
+    font-size: 1.2rem;
+    color: var(--color-teriary);
+    @include tablet {
+      display: none;
+    }
+  }
+}
+//오버뷰
+.overview {
+  @include box-shadow(var(--color-secondary-line));
+  padding: 3rem 2rem;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 10rem;
+  @include desktop {
+    margin-bottom: 5rem;
+  }
+  @include layout(column);
+  gap: 3rem;
+  h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    @include txt-shadow(var(--color-teriary-line));
+    @include tablet {
+      font-size: 3rem;
+    }
+    @include desktop {
+      font-size: 4rem;
+    }
+  }
+  .overview-wrap {
+    @include layout(column);
+    gap: 3rem;
+    width: 90%;
+    @include desktop {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 3rem;
+      width: 100%;
+    }
+    .overview1,
+    .overview2,
+    .overview3,
+    .overview4,
+    .overview5 {
+      @include layout(column);
+      gap: 1rem;
+      h3 {
+        font-size: 1.3rem;
+        color: var(--color-teriary);
+        font-weight: 900;
+        text-align: center;
+      }
+      p {
+        text-align: center;
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+      @include tablet {
+        @include layout(column);
+        gap: 1rem;
+        h3 {
+          font-size: 2rem;
+        }
+        p {
+          font-size: 1.5rem;
+        }
+      }
+      @include desktop {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        h3 {
+          font-size: 2rem;
+        }
+        p {
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
+.flow-sc {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  justify-items: center;
+  @include tablet {
+    @include layout();
+    gap: 2rem;
+  }
+  @include desktop {
+    gap: 3rem;
+  }
+  img {
+    width: 50%;
+    @include tablet {
+      max-width: 150px;
+    }
+    @include desktop {
+      max-width: 230px;
+    }
+  }
+}

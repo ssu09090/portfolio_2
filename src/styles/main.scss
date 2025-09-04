@@ -1,6 +1,8 @@
 * {
   margin: 0;
   padding: 0;
+  scroll-padding-top: 0;
+  scroll-margin-top: 0;
   box-sizing: border-box;
 }
 a {
@@ -16,12 +18,13 @@ h3 {
 li {
   list-style: none;
 }
+
 html {
   font-size: 16px;
 }
 body {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   user-select: none;
   font-family: "Paperlogy";
   background-color: var(--color-bg);
@@ -32,8 +35,11 @@ body {
 main {
   @include layout(column);
 }
-#A, #S, #P, #C{
-  height: 100px
+#A,
+#S,
+#P,
+#C {
+  height: 100px;
 }
 .warning {
   line-height: 1.3;

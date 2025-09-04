@@ -35,16 +35,22 @@ const Header = () => {
           duration: 0.1,
           ease: "power2.out",
           repeat: -1,
-          repeatDelay: 1.5,
-          toggleActions: "play none none reverse",
+          repeatDelay: 0.5,
         }
       );
     }
   }, []);
 
-  const text1 =
-    "단순한 화면 구현을 넘어, 사용자와 소통하는 인터페이스를 만드는";
-  const text2 = "프론트엔드 개발자 정수진의 포트폴리오입니다";
+    const textMobile = [
+    "단순한 화면 구현을 넘어,",
+    "사용자와 소통하는 인터페이스를 만드는",
+    "프론트엔드 개발자 정수진의 포트폴리오입니다",
+  ];
+
+  const textDesktop = [
+    "단순한 화면 구현을 넘어, 사용자와 소통하는 인터페이스를 만드는",
+    "프론트엔드 개발자 정수진의 포트폴리오입니다",
+  ];
 
   return (
     <div id="header">
@@ -55,16 +61,27 @@ const Header = () => {
         </h1>
       </div>
       <div className="header-ment" ref={mentRef}>
-        <p>
-          {text1.split("").map((char, i) => (
-            <span key={`line1-${i}`}>{char}</span>
+        {/* 모바일/태블릿 */}
+        <div className="mobile-text">
+          {textMobile.map((line, i) => (
+            <p key={`mobile-${i}`}>
+              {line.split("").map((char, j) => (
+                <span key={`m-${i}-${j}`}>{char}</span>
+              ))}
+            </p>
           ))}
-        </p>
-        <p>
-          {text2.split("").map((char, i) => (
-            <span key={`line2-${i}`}>{char}</span>
+        </div>
+
+        {/* 데스크탑 */}
+        <div className="desktop-text">
+          {textDesktop.map((line, i) => (
+            <p key={`desktop-${i}`}>
+              {line.split("").map((char, j) => (
+                <span key={`d-${i}-${j}`}>{char}</span>
+              ))}
+            </p>
           ))}
-        </p>
+        </div>
       </div>
     </div>
   );

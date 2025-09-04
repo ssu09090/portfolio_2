@@ -74,7 +74,10 @@ const Publishing = () => {
         </p>
 
         <div className="projects-list">
-          <div className="project-item"  ref={(el) => (itemsRef.current[0] = el)}>
+          <div
+            className="project-item"
+            ref={(el) => (itemsRef.current[0] = el)}
+          >
             <img
               src={`${process.env.PUBLIC_URL}/images/project/tesla_thumnail.png`}
               alt="테슬라"
@@ -173,10 +176,10 @@ const Publishing = () => {
       {/* PUBLISHING */}
       <section className="publishing">
         <div className="title-wrap">
-          <h1 ref={practicalTitleRef}>PRACTICAL</h1>
-          <h1 ref={publishingTitleRef} className="neon-title">
-            PUBLISHING
+          <h1 ref={practicalTitleRef} className="neon-title">
+            PRACTICAL
           </h1>
+          <h1 ref={publishingTitleRef}>PUBLISHING</h1>
         </div>
         <p className="warning">
           크롬 접속시 '위험한 사이트' 경고가 있어도 <br />
@@ -184,7 +187,10 @@ const Publishing = () => {
         </p>
 
         <div className="publishing-grid">
-          <div className="project-item" ref={(el) => (itemsRef.current[3] = el)}>
+          <div
+            className="project-item"
+            ref={(el) => (itemsRef.current[3] = el)}
+          >
             <a
               href="https://ssu09090.github.io/postboard/"
               target="_blank"
@@ -208,7 +214,7 @@ const Publishing = () => {
                 등록된 이메일 기반으로 로그인 <br />
                 게시글 및 댓글 작성, 수정, 삭제 기능 구현
                 <br />
-                로그인 메일 : 1004@sample.com
+                샘플 로그인 메일 : 1004@sample.com
               </p>
             </div>
           </div>

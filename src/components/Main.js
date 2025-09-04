@@ -1,10 +1,10 @@
 import Menu from "./menu/Menu";
 import Header from "./main/Header";
-import Aboutme from "./main/Aboutme";
+import AboutMe from "./main/AboutMe";
 import Skills from "./main/Skills";
 import Project from "./main/Project";
 import Publishing from "./main/Publishing";
-import Scroll from "./main/Scroll";
+import Scroll from "./Scroll";
 import Footer from "./main/Footer";
 
 const Main = () => {
@@ -15,7 +15,7 @@ const Main = () => {
         <Header />
       </header>
       <main>
-        <Aboutme />
+        <AboutMe />
         <Skills />
         <Project/>
         <Publishing/>

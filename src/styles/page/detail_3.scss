@@ -1,0 +1,40 @@
+//첫화면 데스크탑
+.star_page {
+  margin: 5rem auto;
+  position: relative;
+  @include layout(column);
+  gap: 5rem;
+  .star_view {
+    @include layout();
+    gap: 2rem;
+    position: relative;
+    .desktop-pic {
+      position: relative;
+      width: 70%;
+      overflow: hidden;
+      margin: 0 auto;
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      .pic {
+        z-index: -1;
+        position: absolute;
+        top: 3%;
+        left: 9%;
+        width: 82%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        will-change: transform;
+        img {
+          display: block;
+          width: 100%;
+          height: auto;
+          flex: 0 0 100%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,66 @@
+.pagelayer {
+  min-height: 100vh;
+  position: relative;
+  .back-wrap {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    @include box-shadow(var(--color-primary-line));
+    .back-btn {
+      width: 50px;
+      height: 50px;
+      border: none;
+      background: var(--color-primary);
+      font-size: 1.4rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.3s;
+      &:hover {
+        background: var(--color-primary-line);
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  // 스크롤 버튼 묶음
+  .scroll-btns {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    z-index: 10;
+    button {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: none;
+      font-size: 1.2rem;
+      background: var(--color-secondary);
+      color: var(--color-blacktxt);
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.3s;
+      @include box-shadow(var(--color-secondary-line));
+      &:hover {
+        background: var(--color-secondary-line);
+        transform: scale(1.1);
+        color: var(--color-maintxt);
+      }
+    }
+
+    .home-btn {
+      background: var(--color-point);
+      @include box-shadow(var(--color-point-line));
+
+      &:hover {
+        background: var(--color-point-line);
+      }
+    }
+  }
+}

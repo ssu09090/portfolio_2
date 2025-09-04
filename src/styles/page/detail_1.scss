@@ -1,0 +1,371 @@
+.detail-page {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15rem;
+  .page-title {
+    margin-top: 10rem;
+    @include layout(column);
+    gap: 2rem;
+    h1 {
+      color: var(--color-secondary);
+      font-size: 2.5rem;
+      margin-top: 2rem;
+      text-align: center;
+      @include txt-shadow(var(--color-secondary-line));
+      @include tablet {
+        font-size: 3rem;
+      }
+      @include desktop {
+        font-size: 4rem;
+      }
+    }
+    .btn-wrap {
+      @include layout(row);
+      gap: 1rem;
+      margin-bottom: 2rem;
+      .btn {
+        @include btn();
+      }
+    }
+  }
+
+  .survey {
+    @include box-shadow(var(--color-secondary-line));
+    width: 90%;
+    @include tablet {
+      width: auto;
+    }
+    padding: 2rem;
+    @include layout(column);
+    gap: 1rem;
+    align-items: flex-start;
+    text-align: left;
+    li {
+      font-size: 0.8rem;
+      line-height: 1.5;
+      @include tablet {
+        font-size: 1.2rem;
+      }
+      @include desktop {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+.page-section {
+  width: 90%;
+  margin: 0 auto;
+}
+
+//첫화면 데스크탑
+.desktop {
+  @include layout(column);
+  gap: 2rem;
+  @include desktop {
+    @include layout();
+    gap: 3rem;
+  }
+  .site-view {
+    @include layout();
+    position: relative;
+    width: 90%;
+    @include tablet {
+      width: 50%;
+    }
+    .desktop-pic {
+      position: relative;
+      overflow: hidden;
+      margin: 0 auto;
+      border-radius: 55px 55px 0 0;
+      @include tablet {
+        border-radius: 70px 70px 0 0;
+      }
+      @include desktop {
+        border-radius: 90px 90px 0 0;
+      }
+      img {
+        display: block;
+        width: 100%;
+      }
+      .pic {
+        z-index: -1;
+        position: absolute;
+        top: 3.5%;
+        left: 9%;
+        width: 82%;
+
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        will-change: transform;
+        img {
+          display: block;
+          width: 100%;
+          height: auto;
+          flex: 0 0 100%;
+        }
+      }
+    }
+  }
+}
+
+//두번째 페이지 테블릿
+.tablet {
+  @include layout(column);
+  gap: 2rem;
+  @include desktop {
+    @include layout();
+    flex-direction: row-reverse;
+    gap: 3rem;
+  }
+  .site-view {
+    @include layout();
+    position: relative;
+    width: 60%;
+    @include tablet {
+      width: 30%;
+    }
+    .tablet-pic {
+      position: relative;
+      overflow: hidden;
+      margin: 0 auto;
+      border-radius: 20px;
+      img {
+        display: block;
+        width: 100%;
+      }
+      .pic {
+        z-index: -1;
+        position: absolute;
+        top: 10%;
+        left: 4%;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        will-change: transform;
+        img {
+          flex: 0 0 100%;
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+//세번째 페이지 모바일
+.mobile {
+  @include layout(column);
+  gap: 2rem;
+  @include desktop {
+    @include layout();
+    gap: 3rem;
+  }
+  .site-view {
+    position: relative;
+    min-height: 100%;
+    @include layout();
+    width: 50%;
+    @include tablet {
+      width: 25%;
+    }
+    @include desktop {
+      @include layout();
+      gap: 5rem;
+    }
+    .mobile-pic {
+      position: relative;
+      overflow: hidden;
+      margin: 0 auto;
+      box-shadow: var(--shadow);
+      border-radius: 35px;
+      @include tablet {
+        border-radius: 45px;
+      }
+      @include desktop {
+        border-radius: 70px;
+      }
+      img {
+        display: block;
+        width: 100%;
+      }
+      .pic {
+        z-index: -1;
+        position: absolute;
+        top: 1.5%;
+        left: 3%;
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        will-change: transform;
+        img {
+          flex: 0 0 100%;
+          width: 100%;
+          height: auto;
+          display: block;
+          object-fit: cover;
+          object-position: center;
+          display: block;
+        }
+      }
+    }
+    .btn-wrap {
+      @include layout(row);
+      gap: 1rem;
+      button {
+        @include btn();
+      }
+    }
+  }
+}
+
+//디자인 시스템
+.design {
+  @include layout(column);
+  height: 100%;
+  gap: 2rem;
+  h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    @include txt-shadow(var(--color-teriary-line));
+    @include tablet {
+      font-size: 3rem;
+    }
+    @include desktop {
+      font-size: 4rem;
+    }
+  }
+  .system {
+    @include layout(column);
+    gap: 2rem;
+    @include tablet {
+      gap: 3rem;
+    }
+    @include desktop {
+      @include layout();
+    }
+    .design-color {
+      @include layout(column);
+      h3 {
+        font-size: 2rem;
+        margin: 2rem 0;
+        color: var(--color-point);
+      }
+      img {
+        width: 80%;
+        @include tablet {
+          width: 90%;
+        }
+      }
+    }
+    .design-typo {
+      @include layout(column);
+      h3 {
+        font-size: 2rem;
+        margin: 2rem 0;
+        color: var(--color-point);
+      }
+      img {
+        width: 80%;
+        @include tablet {
+          width: 90%;
+        }
+      }
+    }
+  }
+}
+
+//유저플로우
+.user {
+  height: 100%;
+  @include layout(column);
+  gap: 3rem;
+  h1 {
+    font-size: 2.5rem;
+    @include txt-shadow(var(--color-teriary-line));
+    @include tablet {
+      font-size: 3rem;
+    }
+    @include desktop {
+      font-size: 4rem;
+    }
+  }
+  img {
+    width: 90%;
+    @include tablet {
+      max-width: 70%;
+    }
+  }
+}
+
+//회고
+.retrace {
+  height: 100%;
+  margin-bottom: 15rem;
+  @include desktop {
+    margin-bottom: 5rem;
+  }
+  @include layout(column);
+  gap: 3rem;
+  h1 {
+    font-size: 2.5rem;
+    @include txt-shadow(var(--color-teriary-line));
+    @include tablet {
+      font-size: 3rem;
+    }
+    @include desktop {
+      font-size: 4rem;
+    }
+  }
+  .retrace-wrap {
+    @include layout(column);
+    gap: 3rem;
+    width: 90%;
+    @include desktop {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 3rem;
+    }
+    .retrace1,
+    .retrace2,
+    .retrace3 {
+      @include layout(column);
+      gap: 1rem;
+      h3 {
+        font-size: 1.3rem;
+        color: var(--color-teriary);
+        font-weight: 900;
+        text-align: center;
+      }
+      p {
+        text-align: center;
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+      @include tablet {
+        h3 {
+          font-size: 2rem;
+        }
+        p {
+          font-size: 1.5rem;
+        }
+      }
+      @include desktop {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        h3 {
+          font-size: 2rem;
+        }
+        p {
+          text-align: left;
+        }
+      }
+    }
+  }
+}
