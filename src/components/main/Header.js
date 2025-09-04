@@ -32,10 +32,10 @@ const Header = () => {
           opacity: 1,
           y: 0,
           stagger: 0.05,
-          duration: 0.1,
+          duration: 0.15,
           ease: "power2.out",
           repeat: -1,
-          repeatDelay: 0.5,
+          repeatDelay: 0.2,
         }
       );
     }

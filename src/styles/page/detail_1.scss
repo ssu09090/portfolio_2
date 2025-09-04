@@ -325,7 +325,6 @@
   .retrace-wrap {
     @include layout(column);
     gap: 3rem;
-    width: 90%;
     @include desktop {
       display: flex;
       flex-direction: column;

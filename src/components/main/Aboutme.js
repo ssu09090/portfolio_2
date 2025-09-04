@@ -63,7 +63,7 @@ const AboutMe = () => {
         ease: "power2.out",
         scrollTrigger: {
           trigger: resumeRef.current,
-          start: "top 65%",
+          start: "top 50%",
           toggleActions: "play none none reverse",
         },
       }
