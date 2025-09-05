@@ -117,7 +117,7 @@ const Publishing = () => {
               <h3>2. AIRBNB</h3>
               <p class="explain">Grid 레이아웃 구현</p>
               <div class="btn-wrap">
-                <button className="btn" onClick={() => navigate("/Air")}>
+                <button className="btn" onClick={() => navigate("/Airbnb")}>
                   MORE
                 </button>
                 <a
@@ -148,7 +148,7 @@ const Publishing = () => {
               <h3>3. NETFLIX</h3>
               <p class="explain">React 활용, 오픈 API 연동</p>
               <div class="btn-wrap">
-                <button className="btn" onClick={() => navigate("/Net")}>
+                <button className="btn" onClick={() => navigate("/Netflix")}>
                   MORE
                 </button>
                 <a

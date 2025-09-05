@@ -7,6 +7,9 @@ import Pin from "./components/page/Pin";
 import Word from "./components/page/Word";
 import Quiz from "./components/page/Quiz";
 import Star from "./components/page/Star";
+import Tesla from "./components/page/Tesla";
+import Airbnb from "./components/page/Airbnb";
+import Netflix from "./components/page/Netflix";
 
 const App = () => {
 
@@ -20,6 +23,9 @@ const App = () => {
         <Route path="/Word" element={<Word />} />
         <Route path="/Quiz" element={<Quiz />} />
         <Route path="/Star" element={<Star />} />
+        <Route path="/Tesla" element={<Tesla />} />
+        <Route path="/Airbnb" element={<Airbnb />} />
+        <Route path="/Netflix" element={<Netflix />} />
       </Routes>
     </BrowserRouter>
   );

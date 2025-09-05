@@ -5,12 +5,12 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Tesla = () => {
+const Airbnb = () => {
   const titleRef = useRef(null);
   const descRefs = useRef([]);
   const cloneRefs = useRef([]);
 
-  //이미지 hover시 확대
+  // 이미지 hover 애니메이션
   const handleEnter = (el, direction) => {
     gsap.to(el, {
       x: direction === "left" ? -20 : 20,
@@ -46,7 +46,7 @@ const Tesla = () => {
       });
     }
 
-    // 스크롤 애니메이션 (overview, clone_view 등)
+    // 설명 섹션 애니메이션
     if (descRefs.current.length > 0) {
       gsap.fromTo(
         descRefs.current,
@@ -65,7 +65,7 @@ const Tesla = () => {
       );
     }
 
-    //이미지 애니메이션
+    // 이미지 등장 애니메이션
     if (cloneRefs.current.length > 0) {
       gsap.fromTo(
         cloneRefs.current,
@@ -88,45 +88,48 @@ const Tesla = () => {
   return (
     <PageLayout>
       <div className="detail-page">
-        {/* 프로젝트 정보 */}
         <section className="clone_page">
           <div className="clone_info">
-            {/* 프로젝트 제목 */}
+            {/* 제목 */}
             <div className="page-title">
               <h1 ref={titleRef} className="neon-title">
-                TESLA
+                AIRBNB
               </h1>
             </div>
+
+            {/* 설명 섹션 */}
             <div ref={(el) => (descRefs.current[0] = el)}>
               <h3>제작에 사용된 스킬</h3>
               <ul>
-                <li>HTML, CSS</li>
+                <li>HTML, SCSS, CSS</li>
               </ul>
             </div>
+
             <div ref={(el) => (descRefs.current[1] = el)}>
               <h3>프로젝트 설명</h3>
               <ul>
                 <li>
-                  클론 사이트 : TESLA
+                  클론 사이트 : AIRBNB{" "}
                   <a
-                    href="https://www.tesla.com/ko_kr"
+                    href="https://www.airbnb.co.kr/"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    (https://www.tesla.com/ko_kr)
+                    (https://www.airbnb.co.kr/)
                   </a>
                 </li>
                 <li>
-                  브랜드 스타일과 레이아웃을 재현한 웹사이트로 사용자의 시선을
-                  끄는 콘텐츠 배치와 시각적 연출에 집중
+                  검색 및 카드 기반 콘텐츠 배치를 통해 실제 서비스와 유사하도록
+                  구현
                 </li>
                 <li>
-                  테슬라 클론 코딩으로 HTML 클래스 네이밍의 중요성을 이해하고
-                  반응형으로 제작하면서 동적인 레이아웃 구성을 익힘
+                  실제 서비스의 구조를 분석하며 사용자 시선을 고려한 Grid
+                  레이아웃 및 반응형 디자인에 대한 이해를 높임
                 </li>
               </ul>
             </div>
-            <div ref={(el) => (descRefs.current[3] = el)}>
+
+            <div ref={(el) => (descRefs.current[2] = el)}>
               <h3>프로젝트 개요</h3>
               <ul>
                 <li>
@@ -134,21 +137,21 @@ const Tesla = () => {
                   <span className="mobile-break">
                     <br />
                   </span>
-                Figma를 이용한 디자인 시스템 구축 후 코드 구현
+                  Figma를 이용한 디자인 시스템 구축 후 코드 구현
                 </li>
                 <li>
                   레이아웃 제작 방식 &nbsp;: &nbsp;
                   <span className="mobile-break">
                     <br />
                   </span>
-                  Flex를 기반으로 카드 형태의 레이아웃 제작
+                  Flex 및 Grid 기반 카드형 레이아웃 제작
                 </li>
                 <li>
                   제작기간 및 기여도 &nbsp;: &nbsp;
                   <span className="mobile-break">
                     <br />
                   </span>
-                  4월 18일 (1일) / 100% (개인프로젝트)
+                  4월 30일 (1일) / 100% (개인 프로젝트)
                 </li>
               </ul>
             </div>
@@ -157,7 +160,7 @@ const Tesla = () => {
           {/* 버튼 */}
           <div className="btn-wrap">
             <a
-              href="https://zrr.kr/dRD0NU"
+              href="https://zrr.kr/xCQLXE"
               className="btn"
               target="_blank"
               rel="noreferrer"
@@ -165,7 +168,7 @@ const Tesla = () => {
               와이어프레임
             </a>
             <a
-              href="https://ssu09090.github.io/tesla/index.html"
+              href="https://ssu09090.github.io/airbnb/index.html"
               className="btn"
               target="_blank"
               rel="noreferrer"
@@ -173,7 +176,7 @@ const Tesla = () => {
               SITE
             </a>
             <a
-              href="https://github.com/ssu09090/ssu09090.github.io/tree/main/tesla"
+              href="https://github.com/ssu09090/ssu09090.github.io/tree/main/airbnb"
               className="btn"
               target="_blank"
               rel="noreferrer"
@@ -182,12 +185,12 @@ const Tesla = () => {
             </a>
           </div>
 
-          {/* 클론 뷰 */}
+          {/* 이미지 뷰 */}
           <div className="clone_view">
             <img
               ref={(el) => (cloneRefs.current[0] = el)}
               className="chap1"
-              src={`${process.env.PUBLIC_URL}/images/screen/t_1.png`}
+              src={`${process.env.PUBLIC_URL}/images/screen/a_1.png`}
               alt="사이트화면"
               onMouseEnter={() => handleEnter(cloneRefs.current[0], "left")}
               onMouseLeave={() => handleLeave(cloneRefs.current[0])}
@@ -195,7 +198,7 @@ const Tesla = () => {
             <img
               ref={(el) => (cloneRefs.current[1] = el)}
               className="chap2"
-              src={`${process.env.PUBLIC_URL}/images/screen/t_2.png`}
+              src={`${process.env.PUBLIC_URL}/images/screen/a_2.png`}
               alt="사이트화면"
               onMouseEnter={() => handleEnter(cloneRefs.current[1], "right")}
               onMouseLeave={() => handleLeave(cloneRefs.current[1])}
@@ -211,4 +214,4 @@ const Tesla = () => {
   );
 };
 
-export default Tesla;
+export default Airbnb;

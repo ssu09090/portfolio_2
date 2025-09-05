@@ -26,8 +26,19 @@
       margin-bottom: 2rem;
       .btn {
         @include btn();
+        @include tablet {
+          font-size: 1.5rem;
+        }
+        @include desktop {
+          font-size: 2rem;
+        }
       }
     }
+  }
+
+  //디바이스 별 버튼 폰트 크기
+  .btn {
+    @include btn();
   }
 
   .survey {

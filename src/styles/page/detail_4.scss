@@ -1,0 +1,177 @@
+//모바일
+.clone_page {
+  @include layout(column);
+  margin: 0 auto;
+  .clone_info {
+    @include layout(column);
+    align-items: flex-start;
+    width: 90%;
+    gap: 3rem;
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+      border-bottom: 3px solid var(--color-secondary);
+      @include tablet {
+        font-size: 4.5rem;
+      }
+      @include desktop {
+        font-size: 5.3rem;
+      }
+    }
+    div {
+      @include layout(column);
+      align-items: flex-start;
+      h3 {
+        font-family: var(--main-font);
+        font-size: 1.3rem;
+        color: var(--color-teriary);
+        @include tablet {
+          font-size: 1.5rem;
+        }
+        @include desktop {
+          font-size: 1.7rem;
+        }
+      }
+      ul {
+        padding: 2rem;
+        @include layout(column);
+        gap: 1rem;
+        align-items: flex-start;
+        text-align: left;
+
+        li {
+          font-size: 1rem;
+          line-height: 1.5;
+          @include tablet {
+            font-size: 1.2rem;
+          }
+          @include desktop {
+            font-size: 1.5rem;
+          }
+          a {
+            color: var(--color-point);
+            font-size: 0.8rem;
+            @include tablet {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
+    .mobile-break {
+      display: inline;
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+  .btn-wrap {
+    @include layout(row);
+    gap: 1rem;
+    margin: 2rem;
+    .btn {
+      @include btn();
+      @include tablet {
+        font-size: 1.5rem;
+      }
+      @include desktop {
+        font-size: 2rem;
+      }
+    }
+  }
+  .clone_view {
+    .chap1 {
+      @include box-shadow(var(--color-secondary-line));
+      position: absolute;
+      top: 1300px;
+      left: 10%;
+      width: 80%;
+      transform: rotate(-15deg);
+    }
+    .chap2 {
+      @include box-shadow(var(--color-secondary-line));
+      width: 30%;
+      position: absolute;
+      top: 1500px;
+      right: 20%;
+      transform: rotate(15deg);
+    }
+    .chap3 {
+      @include box-shadow(var(--color-secondary-line));
+      width: 50%;
+      position: absolute;
+      top: 1750px;
+      right: 35%;
+    }
+    .chap4 {
+      position: absolute;
+      top: 1700px;
+    }
+  }
+}
+
+//테블릿
+@include tablet {
+  .clone_page {
+    ul {
+      li {
+        @include layout();
+        gap: 1rem;
+      }
+    }
+    .clone_view {
+      @include layout();
+      .chap1 {
+        top: 1400px;
+        left: 10%;
+        width: 70%;
+      }
+      .chap2 {
+        width: 25%;
+        top: 1600px;
+        right: 15%;
+      }
+      .chap3 {
+        width: 40%;
+        position: absolute;
+        top: 1950px;
+        left: 15%;
+      }
+      .chap4 {
+        position: absolute;
+        top: 2100px;
+      }
+    }
+  }
+}
+
+//데스크탑
+@include desktop {
+  .clone_page {
+    width: 80%;
+    .clone_view {
+      gap: 2rem;
+      img {
+        width: 70%;
+      }
+      .chap1 {
+        top: 1500px;
+      }
+      .chap2 {
+        top: 1700px;
+        right: 10%;
+      }
+      .chap3 {
+        width: 35%;
+        position: absolute;
+        top: 2100px;
+        left: 20%;
+      }
+      .chap4 {
+        position: absolute;
+        height: 80%;
+        top: 2000px;
+      }
+    }
+  }
+}
