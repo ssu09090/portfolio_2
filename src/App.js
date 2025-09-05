@@ -1,5 +1,5 @@
 import "./App.scss";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./components/system/ScrollToTop";
 import Main from "./components/Main";
 import Zero from "./components/page/Zero";
@@ -14,7 +14,7 @@ import Netflix from "./components/page/Netflix";
 const App = () => {
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Main />} />
@@ -27,7 +27,7 @@ const App = () => {
         <Route path="/Airbnb" element={<Airbnb />} />
         <Route path="/Netflix" element={<Netflix />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
